@@ -2,7 +2,6 @@ package com.mytravel.trekking.controller;
 
 import com.mytravel.trekking.model.UserProfile;
 import com.mytravel.trekking.repository.UserProfileRepository;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

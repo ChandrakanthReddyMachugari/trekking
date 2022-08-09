@@ -15,6 +15,7 @@ public class LoginService {
     }
 
     public UserProfile login(Creds creds){
+        System.out.println(creds);
        return userRepository.findByUsername(creds.getUsername());
 
     }

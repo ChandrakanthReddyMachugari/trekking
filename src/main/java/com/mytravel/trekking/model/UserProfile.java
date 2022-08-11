@@ -8,6 +8,7 @@ public class UserProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String username;
     @Column(length = 35,nullable = false)
     private String firstName;
@@ -17,6 +18,7 @@ public class UserProfile {
 //    @OneToMany
 //    @JoinColumn(name = "address_id")
 //    private List<Address> address;
+
     @Column(length = 50,nullable = false)
     private String emailId;
     @Column(length = 15,nullable = false)

@@ -1,6 +1,7 @@
 package com.mytravel.trekking.model;
 
 public class Creds {
+
     private String username;
     private String password;
 

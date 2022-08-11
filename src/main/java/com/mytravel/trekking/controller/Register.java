@@ -17,7 +17,7 @@ public class Register {
         this.userProfileRepository = userProfileRepository;
     }
 
-    @PostMapping({"/register","register"})
+    @PostMapping({"v1/register","/v1/register"})
     public ResponseEntity<Object> register(@RequestBody UserProfile userProfile){
         UserProfile savedProfile = userProfileRepository.save(userProfile);
         Optional<UserProfile> userProfileOptional = Optional.ofNullable(savedProfile);

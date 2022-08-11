@@ -20,7 +20,7 @@ public class Login {
         this.loginService = loginService;
     }
 
-    @PostMapping("login")
+    @PostMapping("v1/login")
     public ResponseEntity<UserProfile> login(@RequestBody Creds creds){
         UserProfile isLogin=loginService.login(creds);
         Optional<UserProfile> value = Optional.ofNullable(isLogin);

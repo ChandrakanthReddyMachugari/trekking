@@ -1,20 +1,23 @@
 package com.mytravel.trekking.controller.ui;
 
 import com.mytravel.trekking.model.UserProfile;
-import com.mytravel.trekking.repository.UserProfileRepository;
-import org.apache.catalina.User;
+import com.mytravel.trekking.service.RegistrationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.validation.Valid;
+
 @Controller
 public class RegistrationController {
-    private final UserProfileRepository repository;
 
-    public RegistrationController(UserProfileRepository repository) {
-        this.repository = repository;
+    private final RegistrationService registrationService;
+
+    public RegistrationController(RegistrationService registrationService) {
+        this.registrationService = registrationService;
     }
 
     @GetMapping("/registration")
@@ -23,9 +26,16 @@ public class RegistrationController {
         return "registration";
     }
     @PostMapping("/registration")
-    public String registerSubmit(@ModelAttribute UserProfile userProfile, Model model){
-        UserProfile saved = repository.save(userProfile);
+    public String registerSubmit(@Valid @ModelAttribute("userprofile") UserProfile userProfile, BindingResult result){
+        System.out.println("====> Inside registerSubmit");
+        if (result.hasErrors()){
+
+            System.out.println("error");
+            return "registration";
+        }
+        UserProfile saved = registrationService.save(userProfile);
         if (saved!=null) {
+
             return "redirect:login";
         } else {
             return "registration";

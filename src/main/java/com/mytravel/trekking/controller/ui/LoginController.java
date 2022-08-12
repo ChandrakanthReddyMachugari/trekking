@@ -3,7 +3,7 @@ package com.mytravel.trekking.controller.ui;
 import com.mytravel.trekking.model.Creds;
 import com.mytravel.trekking.model.Login;
 import com.mytravel.trekking.model.UserProfile;
-import com.mytravel.trekking.service.LoginService;
+import com.mytravel.trekking.service.LoginServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class LoginController {
 
-    private final LoginService loginService;
+    private final LoginServiceImpl loginService;
 
-    public LoginController(LoginService loginService) {
+    public LoginController(LoginServiceImpl loginService) {
         this.loginService = loginService;
     }
 

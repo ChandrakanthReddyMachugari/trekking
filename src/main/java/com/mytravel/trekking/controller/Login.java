@@ -2,7 +2,7 @@ package com.mytravel.trekking.controller;
 
 import com.mytravel.trekking.model.Creds;
 import com.mytravel.trekking.model.UserProfile;
-import com.mytravel.trekking.service.LoginService;
+import com.mytravel.trekking.service.LoginServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,9 +14,9 @@ import java.util.Optional;
 @RestController
 public class Login {
 
-    private final LoginService loginService;
+    private final LoginServiceImpl loginService;
 
-    public Login(LoginService loginService) {
+    public Login(LoginServiceImpl loginService) {
         this.loginService = loginService;
     }
 

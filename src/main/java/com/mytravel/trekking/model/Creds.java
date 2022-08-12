@@ -1,7 +1,11 @@
 package com.mytravel.trekking.model;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+
 public class Creds {
 
+    @NotNull
     private String username;
     private String password;
 

@@ -6,6 +6,7 @@ import com.mytravel.trekking.model.UserProfile;
 import com.mytravel.trekking.service.LoginServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +27,7 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String loginSubmit(@ModelAttribute Login login, Model model){
+    public String loginSubmit(@ModelAttribute Login login, BindingResult result, Model model){
         Creds creds = new Creds();
         creds.setUsername(login.getUsername());
         creds.setPassword(login.getPassword());

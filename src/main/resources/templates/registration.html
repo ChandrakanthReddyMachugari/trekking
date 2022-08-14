@@ -93,6 +93,20 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    option{
+      color: #080710;
+    }
+    select{
+      display: block;
+      color: #080710;
+      height: 30px;
+      width: 100%;
+      border-radius: 3px;
+      padding: 0 10px;
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 300;
+    }
 
   </style>
 </head>
@@ -112,6 +126,12 @@
         <input type="text" th:field="*{lastName}">
         <br>
         <label>Mobile Number: </label>
+        <select th:field="*{countryCode}">
+          <option th:each="country:${countryCodes}"
+                  th:value="${country.phone_code}"
+                  th:text="${country.country_name}"
+          >India</option>
+        </select>
         <input type="number" th:field="*{phoneNumber}">
         <br>
         <label>Email Id : </label>

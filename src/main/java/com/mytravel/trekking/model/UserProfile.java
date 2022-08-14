@@ -39,6 +39,8 @@ public class UserProfile {
     @Column(length = 50,nullable = false)
     @Email
     private String emailId;
+    @NotEmpty
+    private String countryCode;
     @Column(length = 15,nullable = false)
     @NotNull
     private String phoneNumber;

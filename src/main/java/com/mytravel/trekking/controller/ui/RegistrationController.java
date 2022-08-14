@@ -27,12 +27,7 @@ public class RegistrationController {
     @GetMapping("/registration")
     public String register(Model model){
         CountryCode[] countryCodes = registrationService.countryCode();
-        Arrays.stream(countryCodes).forEach(System.out::println);
         List<CountryCode> countryCodeList = Arrays.stream(countryCodes).collect(Collectors.toList());
-        for (CountryCode country:
-             countryCodeList) {
-            System.out.println(country.getCountry_name());
-        };
         model.addAttribute("countryCodes", countryCodeList);
         model.addAttribute("userprofile",new UserProfile());
         return "registration";
